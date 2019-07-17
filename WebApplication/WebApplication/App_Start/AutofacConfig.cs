@@ -3,6 +3,7 @@ using Autofac.Integration.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
@@ -24,6 +25,20 @@ namespace WebApplication
             builder.RegisterType<PostRepository>().As<IPostRepository>();
             builder.RegisterType<PostService>().As<IPostService>();
             */
+
+            //Repositories的注入
+            builder.RegisterAssemblyTypes(Assembly.Load("WebRepositories"))
+                .Where(t => t.Name.EndsWith("DaoImpl"))
+                .AsImplementedInterfaces()
+                .InstancePerRequest()
+                .PropertiesAutowired();
+            //Services的注入
+            builder.RegisterAssemblyTypes(Assembly.Load("WebServices"))
+                .Where(t => t.Name.EndsWith("ServiceImpl"))
+                .AsImplementedInterfaces()
+                .InstancePerRequest()
+                .PropertiesAutowired();
+
             var container = builder.Build();
 
             //设置依赖注入解析器
