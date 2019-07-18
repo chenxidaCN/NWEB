@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebRepositories
 {
-    interface BaseDao<T> where T : class,new()
+    public interface BaseDao<T> where T : class,new()
     {
         //增
         bool Save(T obj);

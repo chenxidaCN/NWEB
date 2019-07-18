@@ -7,7 +7,7 @@ using WebModels.Domain;
 
 namespace WebRepositories.Impl
 {
-    class UserDaoImpl : BaseDaoImpl<User>,UserDao
+    public class UserDaoImpl : BaseDaoImpl<User>,UserDao
     {
     }
 }

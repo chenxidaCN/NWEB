@@ -8,7 +8,7 @@ using WebRepositories;
 
 namespace WebServices.Impl
 {
-    class UserServiceImpl:UserService
+    public class UserServiceImpl:UserService
     {
         private UserDao UserDao;
         public User getUser(string id)

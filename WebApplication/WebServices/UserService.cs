@@ -7,7 +7,7 @@ using WebModels.Domain;
 
 namespace WebServices
 {
-    interface UserService
+    public interface UserService
     {
         User getUser(string id);
     }

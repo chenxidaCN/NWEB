@@ -8,7 +8,7 @@ using WebModels.Domain;
 
 namespace WebRepositories
 {
-    interface UserDao:BaseDao<User>
+    public interface UserDao :BaseDao<User>
     {
     }
 }

@@ -11,7 +11,7 @@ namespace WebApplication.Controllers
 {
     public class UserController : ApiController
     {
-        private UserService userService;
+        private UserService UserService;
         // GET api/<controller>
         public IEnumerable<string> Get()
         {
@@ -21,7 +21,7 @@ namespace WebApplication.Controllers
         // GET api/<controller>/5
         public User Get(string id)
         {
-            return userService.getUser(id);
+            return UserService.getUser(id);
         }
 
         // POST api/<controller>
@@ -37,6 +37,9 @@ namespace WebApplication.Controllers
         // DELETE api/<controller>/5
         public void Delete(int id)
         {
+        }
+        public UserController(UserService userService) {
+            this.UserService = userService;
         }
     }
 }

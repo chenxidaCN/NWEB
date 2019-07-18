@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebModels.Domain
 {
-    class BaseData
+    public class BaseData
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public string Id { get; set; }

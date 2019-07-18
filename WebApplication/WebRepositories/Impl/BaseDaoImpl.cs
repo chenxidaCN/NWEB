@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace WebRepositories.Impl
 {
-    class BaseDaoImpl<T> : BaseDao<T> where T: class,new()
+    public class BaseDaoImpl<T> : BaseDao<T> where T: class,new()
     {
         private SqlSugarClient Db;
         public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }
