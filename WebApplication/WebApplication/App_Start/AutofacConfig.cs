@@ -25,6 +25,8 @@ namespace WebApplication
             builder.RegisterType<PostRepository>().As<IPostRepository>();
             builder.RegisterType<PostService>().As<IPostService>();
             */
+            //数据库注入
+
 
             //Repositories的注入
             builder.RegisterAssemblyTypes(Assembly.Load("WebRepositories"))

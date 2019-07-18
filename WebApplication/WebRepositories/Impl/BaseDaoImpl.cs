@@ -37,16 +37,9 @@ namespace WebRepositories.Impl
         {
             return CurrentDb.GetList();
         }
-        public BaseDaoImpl()
+        public BaseDaoImpl(SqlSugarClient ssc)
         {
-            this.Db = new SqlSugarClient(new ConnectionConfig()
-            {
-                ConnectionString = @"server=DESKTOP-OBVD1G0\MSSQLSERVER2;uid=sa;pwd=123456;database=PLL_ERP_Co_02",
-                DbType = DbType.SqlServer,
-                InitKeyType = InitKeyType.Attribute,//从特性读取主键和自增列信息
-                IsAutoCloseConnection = true,//开启自动释放模式和EF原理一样我就不多解释了
- 
-            });
+            this.Db = ssc;
         }
     }
 }
