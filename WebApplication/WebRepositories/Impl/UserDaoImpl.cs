@@ -10,7 +10,7 @@ namespace WebRepositories.Impl
 {
     public class UserDaoImpl : BaseDaoImpl<User>,UserDao
     {
-        public UserDaoImpl(SqlSugarClient ssc):base(ssc)
+        public UserDaoImpl(BaseSqlSugarClient ssc): base(ssc)
         {
             
         }

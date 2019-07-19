@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Domain\BaseData.cs" />
+    <Compile Include="Domain\Form.cs" />
     <Compile Include="ViewModel\AccountViewModels.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

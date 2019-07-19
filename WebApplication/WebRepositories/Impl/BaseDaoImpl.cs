@@ -9,7 +9,7 @@ namespace WebRepositories.Impl
 {
     public class BaseDaoImpl<T> : BaseDao<T> where T: class,new()
     {
-        public SqlSugarClient Db;
+        public SqlSugarClient Db {get;set;}
         public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }
 
 
@@ -37,9 +37,15 @@ namespace WebRepositories.Impl
         {
             return CurrentDb.GetList();
         }
-        public BaseDaoImpl(SqlSugarClient ssc)
+        public BaseDaoImpl(BaseSqlSugarClient ssc)
         {
             this.Db = ssc;
+        }
+    }
+    public class BaseSqlSugarClient : SqlSugarClient{
+        public BaseSqlSugarClient(ConnectionConfig config): base(config)
+        {
+
         }
     }
 }
