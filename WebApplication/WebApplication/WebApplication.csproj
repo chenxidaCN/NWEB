@@ -195,6 +195,16 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\bjjl.png" />
+    <Content Include="Images\cs.png" />
+    <Content Include="Images\czzx.png" />
+    <Content Include="Images\gd.png" />
+    <Content Include="Images\lssj.png" />
+    <Content Include="Images\sbzx.png" />
+    <Content Include="Images\sys.png" />
+    <Content Include="Images\tjfx.png" />
+    <Content Include="Images\yhgl.png" />
+    <Content Include="Images\zsk.png" />
     <Content Include="Styles\bootstrap.css" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -203,6 +213,9 @@
     <Content Include="Styles\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -246,9 +259,7 @@
     <Content Include="Views\Account\Register.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Images\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Fonts\glyphicons-halflings-regular.ttf" />
