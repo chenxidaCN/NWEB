@@ -26,19 +26,19 @@ namespace WebApplication
             builder.RegisterType<PostService>().As<IPostService>();
             */
             //数据库注入
-
+            SqlSugarConfig.RegisterDbs(builder);
 
             //Repositories的注入
             builder.RegisterAssemblyTypes(Assembly.Load("WebRepositories"))
                 .Where(t => t.Name.EndsWith("DaoImpl"))
                 .AsImplementedInterfaces()
-                .InstancePerRequest()
+                .SingleInstance()
                 .PropertiesAutowired();
             //Services的注入
             builder.RegisterAssemblyTypes(Assembly.Load("WebServices"))
                 .Where(t => t.Name.EndsWith("ServiceImpl"))
                 .AsImplementedInterfaces()
-                .InstancePerRequest()
+                .SingleInstance()
                 .PropertiesAutowired();
 
             var container = builder.Build();

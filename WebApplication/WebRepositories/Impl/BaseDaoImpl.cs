@@ -9,7 +9,7 @@ namespace WebRepositories.Impl
 {
     public class BaseDaoImpl<T> : BaseDao<T> where T: class,new()
     {
-        private SqlSugarClient Db;
+        public SqlSugarClient Db;
         public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }
 
 

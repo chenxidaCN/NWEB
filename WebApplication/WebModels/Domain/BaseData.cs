@@ -11,8 +11,9 @@ namespace WebModels.Domain
     {
         [SugarColumn(IsPrimaryKey = true, IsIdentity = true)]
         public string Id { get; set; }
-
+        [SugarColumn(ColumnName = "created_on")]
         public DateTime? CreatedOn { get; set; }
+        [SugarColumn(ColumnName = "modified_on")]
         public DateTime? ModifiedOn { get; set; }
     }
 }

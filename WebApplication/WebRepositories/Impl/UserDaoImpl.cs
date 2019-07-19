@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SqlSugar;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,9 @@ namespace WebRepositories.Impl
 {
     public class UserDaoImpl : BaseDaoImpl<User>,UserDao
     {
+        public UserDaoImpl(SqlSugarClient ssc):base(ssc)
+        {
+            
+        }
     }
 }

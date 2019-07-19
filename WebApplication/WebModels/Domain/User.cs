@@ -2,7 +2,7 @@
 
 namespace WebModels.Domain
 {
-    [SugarTable("TestUser")]
+    [SugarTable("test_user")]
     public class User:BaseData
     {
         public string Username { get; set; }

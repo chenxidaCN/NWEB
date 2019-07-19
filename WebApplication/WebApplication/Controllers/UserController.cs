@@ -4,40 +4,21 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Mvc;
 using WebModels.Domain;
 using WebServices;
 
 namespace WebApplication.Controllers
 {
-    public class UserController : ApiController
+    public class UserController : Controller
     {
         private UserService UserService;
-        // GET api/<controller>
-        public IEnumerable<string> Get()
+      
+        public JsonResult GetUser(string id)
         {
-            return new string[] { "value1", "value2" };
+            return Json(UserService.getUser(id),JsonRequestBehavior.AllowGet);
         }
 
-        // GET api/<controller>/5
-        public User Get(string id)
-        {
-            return UserService.getUser(id);
-        }
-
-        // POST api/<controller>
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT api/<controller>/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/<controller>/5
-        public void Delete(int id)
-        {
-        }
         public UserController(UserService userService) {
             this.UserService = userService;
         }
