@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using WebCommons;
 
 namespace WebApplication
 {
@@ -45,6 +46,8 @@ namespace WebApplication
 
             //设置依赖注入解析器
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
+            //容器实例
+            AutofacUtils.Container = container;
         }
     }
 }
