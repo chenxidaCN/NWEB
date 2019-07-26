@@ -29,7 +29,7 @@ namespace WebApplication
             */
             //数据源的注入
             SqlSugarConfig.RegisterDbs(builder);
-
+            RedisConfig.RegisterRedis(builder);
             //Interceptors的注入
             builder.RegisterAssemblyTypes(Assembly.Load("WebCommons"))
                 .Where(t => t.Name.EndsWith("Interceptor"))
