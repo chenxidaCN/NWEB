@@ -14,7 +14,7 @@ namespace WebApplication
     }
     public class ExceptionHandlerAttribute : HandleErrorAttribute
     {
-        Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        Logger logger = LogManager.GetCurrentClassLogger();
         public override void OnException(ExceptionContext filterContext)
         {
             base.OnException(filterContext);
