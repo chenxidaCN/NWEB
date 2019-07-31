@@ -91,6 +91,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -103,6 +104,7 @@
     <Compile Include="Cacher\Cacheable.cs" />
     <Compile Include="Cacher\CacheEvict.cs" />
     <Compile Include="Cacher\CachePut.cs" />
+    <Compile Include="HttpUtils.cs" />
     <Compile Include="LoggerInterceptor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

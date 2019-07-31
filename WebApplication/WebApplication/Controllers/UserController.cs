@@ -7,6 +7,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using WebModels.Domain;
 using WebServices;
+using WebCommons;
 
 namespace WebApplication.Controllers
 {
@@ -17,6 +18,11 @@ namespace WebApplication.Controllers
         public JsonResult GetUser(string id)
         {
             return Json(UserService.getUser(id),JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult UpdateUser()
+        {
+            var dic = HttpUtils.GetDictionary(Request);
+            return Json(UserService.updateUser(dic), JsonRequestBehavior.AllowGet);
         }
 
         public UserController(UserService userService) {

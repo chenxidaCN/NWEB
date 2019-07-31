@@ -14,6 +14,8 @@ namespace WebRepositories
         bool Delete(T obj);
         //改
         bool Update(T obj);
+        // 这个dic["Id]一定要有值
+        bool Update(Dictionary<string, object> dic);
         //查
         T Get(string id);
         List<T> List(Object o);

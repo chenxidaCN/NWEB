@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebModels.Domain;
 
 namespace WebRepositories.Impl
 {
-    public class BaseDaoImpl<T> : BaseDao<T> where T: class,new()
+    public class BaseDaoImpl<T> : BaseDao<T> where T: BaseData,new()
     {
         public SqlSugarClient Db {get;set;}
         public SimpleClient<T> CurrentDb { get { return new SimpleClient<T>(Db); } }
@@ -15,7 +16,11 @@ namespace WebRepositories.Impl
 
         public bool Save(T obj)
         {
-            return CurrentDb.Insert(obj);
+            if (string.IsNullOrEmpty(obj.Id))
+            {
+                return CurrentDb.Insert(obj);
+            }
+            return CurrentDb.Update(obj);
         }
 
         public bool Delete(T obj)
@@ -26,6 +31,10 @@ namespace WebRepositories.Impl
         public bool Update(T obj)
         {
             return CurrentDb.Update(obj);
+        }
+        public bool Update(Dictionary<string,object> dic)
+        {
+            return Db.Updateable<T>(dic).ExecuteCommand()>0;
         }
 
         public T Get(string id)

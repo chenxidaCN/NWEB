@@ -24,7 +24,10 @@ namespace WebRepositories.Impl
         {
             return GetDb().Update(obj);
         }
-
+        public bool Update(Dictionary<string, object> dic)
+        {
+            return AutofacUtils.Resolve<BusinessSqlSugarClient>().Updateable<T>(dic).ExecuteCommand() > 0;
+        }
         public T Get(string id)
         {
             return GetDb().GetById(id);

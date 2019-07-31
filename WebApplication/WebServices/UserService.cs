@@ -10,5 +10,7 @@ namespace WebServices
     public interface UserService
     {
         User getUser(string id);
+
+        User updateUser(Dictionary<string, object> dic);
     }
 }
