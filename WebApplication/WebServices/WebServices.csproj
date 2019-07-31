@@ -64,6 +64,10 @@
     <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebCommons\WebCommons.csproj">
+      <Project>{246a23f9-f908-4399-8f2c-8d9dfc890200}</Project>
+      <Name>WebCommons</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebModels\WebModels.csproj">
       <Project>{d61a388a-0073-44ef-b77b-71005c7b1e0a}</Project>
       <Name>WebModels</Name>

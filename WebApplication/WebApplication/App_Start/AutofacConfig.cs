@@ -48,7 +48,7 @@ namespace WebApplication
                 .SingleInstance()
                 .PropertiesAutowired()
                 .EnableInterfaceInterceptors()
-                .InterceptedBy(typeof(LoggerInterceptor));
+                .InterceptedBy(typeof(LoggerInterceptor),typeof(CacherInterceptor));
             var container = builder.Build();
 
             //设置依赖注入解析器

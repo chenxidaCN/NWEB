@@ -22,7 +22,7 @@ namespace WebCommons
             {
                 if (Logger.IsDebugEnabled)
                 {
-                    Logger.Debug("{0}{1}参数：{2}", invocation.TargetType.FullName, invocation.Method.Name, JsonConvert.SerializeObject(invocation.Arguments));
+                    Logger.Debug("{0}.{1}参数：{2}", invocation.TargetType.FullName, invocation.Method.Name, JsonConvert.SerializeObject(invocation.Arguments));
                 }
                 invocation.Proceed();
                 if (Logger.IsDebugEnabled)
@@ -30,11 +30,11 @@ namespace WebCommons
                     if (invocation.ReturnValue != null && invocation.ReturnValue is IEnumerable)
                     {
                         dynamic collection = invocation.ReturnValue;
-                        Logger.Debug("{0}{1}结果-行数：{2},结果-内容：{3}", invocation.TargetType.FullName, invocation.Method.Name, collection.Count, JsonConvert.SerializeObject(invocation.Arguments));
+                        Logger.Debug("{0}.{1}结果-行数：{2},结果-内容：{3}", invocation.TargetType.FullName, invocation.Method.Name, collection.Count, JsonConvert.SerializeObject(invocation.Arguments));
                     }
                     else
                     {
-                        Logger.Debug("{0}{1}结果：{2}", invocation.TargetType.FullName, invocation.Method.Name, JsonConvert.SerializeObject(invocation.ReturnValue));
+                        Logger.Debug("{0}.{1}结果：{2}", invocation.TargetType.FullName, invocation.Method.Name, JsonConvert.SerializeObject(invocation.ReturnValue));
                     }
                 }
             }
