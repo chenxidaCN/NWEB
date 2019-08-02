@@ -18,7 +18,10 @@ namespace WebApplication.Controllers
         {
             return Json(FormService.getForm(id),JsonRequestBehavior.AllowGet);
         }
-
+        public JsonResult TestEval()
+        {
+            return Json(FormService.Eval(), JsonRequestBehavior.AllowGet);
+        }
         public FormController(FormService FormService) {
             this.FormService = FormService;
         }

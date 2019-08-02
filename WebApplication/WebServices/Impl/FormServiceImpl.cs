@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebModels.Domain;
 using WebRepositories;
+using WebCommons;
 
 namespace WebServices.Impl
 {
@@ -18,6 +19,11 @@ namespace WebServices.Impl
         public FormServiceImpl(FormDao formDao)
         {
             this.FormDao = formDao;
+        }
+
+        public object Eval()
+        {
+            return WebCommons.AutofacUtils.Eval("userService.getUser(#p0)", "11");
         }
     }
 }

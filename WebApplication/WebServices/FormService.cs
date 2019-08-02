@@ -10,5 +10,6 @@ namespace WebServices
     public interface FormService
     {
         Form getForm(string id);
+        object Eval();
     }
 }

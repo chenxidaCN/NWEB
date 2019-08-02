@@ -49,12 +49,13 @@ namespace WebApplication
                 .PropertiesAutowired()
                 .EnableInterfaceInterceptors()
                 .InterceptedBy(typeof(LoggerInterceptor),typeof(CacherInterceptor));
-            var container = builder.Build();
 
+            var container = builder.Build();
             //设置依赖注入解析器
             DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
             //容器实例
             AutofacUtils.Container = container;
+            AutofacUtils.Types = Assembly.Load("WebServices").GetTypes().ToList();
         }
     }
 }
