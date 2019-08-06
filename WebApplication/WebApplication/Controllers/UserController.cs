@@ -21,7 +21,7 @@ namespace WebApplication.Controllers
         }
         public JsonResult UpdateUser()
         {
-            var dic = HttpUtils.GetDictionary(Request);
+            var dic = HttpUtils.RequestDictionary(Request);
             return Json(UserService.updateUser(dic), JsonRequestBehavior.AllowGet);
         }
 

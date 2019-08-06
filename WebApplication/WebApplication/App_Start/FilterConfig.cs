@@ -8,11 +8,11 @@ namespace WebApplication
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
-            filters.Add(new HandleErrorAttribute());
-            filters.Add(new ExceptionHandlerAttribute());
+            //filters.Add(new HandleErrorAttribute());
+            filters.Add(new HandlerExceptionAttribute());
         }
     }
-    public class ExceptionHandlerAttribute : HandleErrorAttribute
+    public class HandlerExceptionAttribute : HandleErrorAttribute
     {
         Logger logger = LogManager.GetCurrentClassLogger();
         public override void OnException(ExceptionContext filterContext)

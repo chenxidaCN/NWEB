@@ -10,7 +10,7 @@ namespace WebCommons
 {
     public class HttpUtils
     {
-        public static Dictionary<string, object> GetDictionary(HttpRequestBase request)
+        public static Dictionary<string, object> RequestDictionary(HttpRequestBase request)
         {
             return NvcToDictionary(request.Params);
         }
@@ -33,7 +33,8 @@ namespace WebCommons
                 }
                 else
                 {
-                    result.Add(key, nvc[key]);
+                    string value = nvc[key];
+                    result.Add(key, value);
                 }
             }
 
