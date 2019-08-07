@@ -4,3 +4,10 @@ bin
 # user files
 .user
 .suo
+/WebApplication/.vs/WebApplication
+/WebApplication/Publish
+/WebApplication/WebApplication/Logs
+*.user
+/WebApplication/WebApplication/static
+*.suo
+/WebApplication/WebApplication/index.html

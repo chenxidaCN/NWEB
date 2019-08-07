@@ -1,6 +1,6 @@
-﻿using NLog;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
+using WebApplication.Filters;
 
 namespace WebApplication
 {
@@ -12,13 +12,5 @@ namespace WebApplication
             filters.Add(new HandlerExceptionAttribute());
         }
     }
-    public class HandlerExceptionAttribute : HandleErrorAttribute
-    {
-        Logger logger = LogManager.GetCurrentClassLogger();
-        public override void OnException(ExceptionContext filterContext)
-        {
-            base.OnException(filterContext);
-            logger.Error(filterContext.Exception.ToString());
-        }
-    }
+    
 }
