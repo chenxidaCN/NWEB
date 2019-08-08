@@ -235,6 +235,8 @@
     <Compile Include="Controllers\FormController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\HandlerExceptionAttribute.cs" />
+    <Compile Include="Filters\WebApiAuthAttribute.cs" />
+    <Compile Include="Filters\WebApiExceptionAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
