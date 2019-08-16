@@ -25,7 +25,7 @@ namespace WebApplication.ApiControllers
         public void Post([FromBody]string value)
         {
         }
-
+        [Authorize()]
         // PUT api/<controller>/5
         public void Put(int id, [FromBody]string value)
         {

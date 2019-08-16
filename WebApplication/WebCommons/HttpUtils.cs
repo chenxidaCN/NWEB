@@ -10,7 +10,7 @@ namespace WebCommons
 {
     public class HttpUtils
     {
-        public static Dictionary<string, object> RequestDictionary(HttpRequestBase request)
+        public static Dictionary<string, object> ReqToDictionary(HttpRequestBase request)
         {
             return NvcToDictionary(request.Params);
         }
